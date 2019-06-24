@@ -1,0 +1,9 @@
+<form [formGroup]="simpleForm" (submit)="onFormGroupSubmit()">
+  <input formControlName="first" />
+  <input formControlName="last" />
+  <button>Submit</button>
+</form>
+
+<h1>{{ simpleForm.value | json }}</h1>
+<h1>{{ simpleForm.valid | json }}</h1>
+<h1>{{ simpleForm.get('first').errors | json }}</h1>

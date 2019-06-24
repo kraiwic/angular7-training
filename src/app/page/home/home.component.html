@@ -1,0 +1,33 @@
+<button class="btn btn-primary" (click)="onToggle()">Toggle</button>
+<div *ngIf="showContent">
+  <h1>{{ name }}</h1>
+  <h1>{{ title }}</h1>
+  <span>{{ url }}</span>
+  <br />
+  <a [href]="url">Go to url</a>
+  <br />
+  <button (click)="onButtonClick()">Show URL</button>
+  <br />
+  <input [(ngModel)]="url" />
+
+  <ul class="list-group">
+    <li
+      appHighlight="red"
+      class="list-group-item"
+      [ngClass]="{ active: item == 'Two' }"
+      *ngFor="let item of items"
+    >
+      {{ item }}
+    </li>
+  </ul>
+
+  <hr />
+  <div [ngSwitch]="conditionExp">
+    <ng-template [ngSwitchCase]="exp1">One</ng-template>
+    <ng-template ngSwitchCase="xxx">Two</ng-template>
+    <ng-template ngSwitchDefault>Three</ng-template>
+  </div>
+  <hr />
+</div>
+<hr />
+<h1>{{ '1234567890123456' | trimCreditCard: 'x' }}</h1>

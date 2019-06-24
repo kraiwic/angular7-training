@@ -1,0 +1,26 @@
+<button class="btn btn-link" (click)="onAddClick()">Add new user</button>
+<table class="table">
+  <tr>
+    <th></th>
+    <th>ID</th>
+    <th>User ID</th>
+    <th>User Name</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let user of users | async">
+    <!-- Use "| async" when use Observable in component.ts -->
+    <td>
+      <button class="btn btn-link" (click)="onEditClick(user.$loki)">
+        Edit
+      </button>
+    </td>
+    <td>{{ user.$loki }}</td>
+    <td>{{ user.userId }}</td>
+    <td>{{ user.name }}</td>
+    <td>
+      <button class="btn btn-link" (click)="onDelClick(user.$loki)">
+        Delete
+      </button>
+    </td>
+  </tr>
+</table>

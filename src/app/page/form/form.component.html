@@ -1,0 +1,17 @@
+<form #sForm="ngForm" (submit)="onFormSubmit(sForm)">
+  <input
+    name="first"
+    ngModel
+    required
+    minlength="5"
+    type="email"
+    #first="ngModel"
+  />
+  <input name="last" ngModel required #last="ngModel" />
+  <button>Submit</button>
+</form>
+
+<h1>{{ sForm.value | json | uppercase }}</h1>
+<h1>{{ sForm.valid }}</h1>
+<h1>{{ first.valid }}</h1>
+<h1>{{ last.valid }}</h1>
